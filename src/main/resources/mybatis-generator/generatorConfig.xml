@@ -8,7 +8,15 @@
 
     <!--    <properties resource="mybatis-generator/generator.properties"/>-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
-        <commentGenerator>
+
+        <!-- 生成mysql带有分页的sql的插件  这个可以自己写，-->
+        <plugin type="cn.hulingfeng.config.MysqlPaginationPlugin" />
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <!-- 自定义的注释规则，继承 DefaultCommentGenerator 重写 一些方法 -->
+        <commentGenerator type="cn.hulingfeng.config.CommentGenerator">
+            <!-- 是否去除自动生成的日期注释 true：是 ： false:否 -->
             <property name="suppressDate" value="true"/>
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>

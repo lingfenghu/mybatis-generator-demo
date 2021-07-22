@@ -351,6 +351,355 @@
     </trim>
   </insert>
   <resultMap id="BaseResultMap" type="cn.hulingfeng.domain.User">
+    <result column="USER_ID" jdbcType="NUMERIC" property="userId" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="USERNAME" jdbcType="VARCHAR" property="username" />
+    <result column="SEX_SL" jdbcType="VARCHAR" property="sexSl" />
+    <result column="MARRI_SL" jdbcType="VARCHAR" property="marriSl" />
+    <result column="EDU_SL" jdbcType="VARCHAR" property="eduSl" />
+    <result column="OCCU_SL" jdbcType="VARCHAR" property="occuSl" />
+    <result column="LOGINNAME" jdbcType="VARCHAR" property="loginname" />
+    <result column="IDCARD" jdbcType="VARCHAR" property="idcard" />
+    <result column="USERSTATUS_SL" jdbcType="VARCHAR" property="userstatusSl" />
+    <result column="ORG_CODE" jdbcType="VARCHAR" property="orgCode" />
+    <result column="AREA_CODE" jdbcType="VARCHAR" property="areaCode" />
+    <result column="SYSTEM_SL" jdbcType="VARCHAR" property="systemSl" />
+    <result column="QUARTERS_SL" jdbcType="VARCHAR" property="quartersSl" />
+    <result column="USERLEVEL_SL" jdbcType="VARCHAR" property="userlevelSl" />
+    <result column="ALIAS" jdbcType="VARCHAR" property="alias" />
+    <result column="CONTACTOR" jdbcType="VARCHAR" property="contactor" />
+    <result column="TEL" jdbcType="VARCHAR" property="tel" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="MOBILE" jdbcType="VARCHAR" property="mobile" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="AVATARPATH" jdbcType="VARCHAR" property="avatarpath" />
+    <result column="QQ" jdbcType="VARCHAR" property="qq" />
+    <result column="WEIXIN" jdbcType="VARCHAR" property="weixin" />
+    <result column="ZIPCODE" jdbcType="VARCHAR" property="zipcode" />
+    <result column="PERHOUCODE" jdbcType="VARCHAR" property="perhoucode" />
+    <result column="PERHOUSE" jdbcType="VARCHAR" property="perhouse" />
+    <result column="PERHOUSEHOLD" jdbcType="VARCHAR" property="perhousehold" />
+    <result column="PERADDCODE" jdbcType="VARCHAR" property="peraddcode" />
+    <result column="PERADD" jdbcType="VARCHAR" property="peradd" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="PROLEVEL_SL" jdbcType="VARCHAR" property="prolevelSl" />
+    <result column="PROLEVELNO" jdbcType="VARCHAR" property="prolevelno" />
+    <result column="SORTNO" jdbcType="NUMERIC" property="sortno" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="CRT_CODE" jdbcType="VARCHAR" property="crtCode" />
+    <result column="CREATEDATE" jdbcType="VARCHAR" property="createdate" />
+    <result column="UPT_CODE" jdbcType="VARCHAR" property="uptCode" />
+    <result column="LASTUPDDATE" jdbcType="VARCHAR" property="lastupddate" />
+    <result column="OPRSTAMP" jdbcType="VARCHAR" property="oprstamp" />
+    <result column="DEPT_CODE" jdbcType="VARCHAR" property="deptCode" />
+    <result column="RESERVE1" jdbcType="VARCHAR" property="reserve1" />
+    <result column="RESERVE2" jdbcType="VARCHAR" property="reserve2" />
+    <result column="RESERVE3" jdbcType="VARCHAR" property="reserve3" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.hulingfeng.domain.User">
+    insert into PUB_USER (USER_ID, USER_CODE, USERNAME, 
+      SEX_SL, MARRI_SL, EDU_SL, 
+      OCCU_SL, LOGINNAME, IDCARD, 
+      USERSTATUS_SL, ORG_CODE, AREA_CODE, 
+      SYSTEM_SL, QUARTERS_SL, USERLEVEL_SL, 
+      ALIAS, CONTACTOR, TEL, 
+      FAX, MOBILE, EMAIL, 
+      AVATARPATH, QQ, WEIXIN, 
+      ZIPCODE, PERHOUCODE, PERHOUSE, 
+      PERHOUSEHOLD, PERADDCODE, PERADD, 
+      ADDRESS, PROLEVEL_SL, PROLEVELNO, 
+      SORTNO, REMARK, CRT_CODE, 
+      CREATEDATE, UPT_CODE, LASTUPDDATE, 
+      OPRSTAMP, DEPT_CODE, RESERVE1, 
+      RESERVE2, RESERVE3)
+    values (#{userId,jdbcType=NUMERIC}, #{userCode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{sexSl,jdbcType=VARCHAR}, #{marriSl,jdbcType=VARCHAR}, #{eduSl,jdbcType=VARCHAR}, 
+      #{occuSl,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
+      #{userstatusSl,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, 
+      #{systemSl,jdbcType=VARCHAR}, #{quartersSl,jdbcType=VARCHAR}, #{userlevelSl,jdbcType=VARCHAR}, 
+      #{alias,jdbcType=VARCHAR}, #{contactor,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{fax,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{avatarpath,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR}, 
+      #{zipcode,jdbcType=VARCHAR}, #{perhoucode,jdbcType=VARCHAR}, #{perhouse,jdbcType=VARCHAR}, 
+      #{perhousehold,jdbcType=VARCHAR}, #{peraddcode,jdbcType=VARCHAR}, #{peradd,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{prolevelSl,jdbcType=VARCHAR}, #{prolevelno,jdbcType=VARCHAR}, 
+      #{sortno,jdbcType=NUMERIC}, #{remark,jdbcType=VARCHAR}, #{crtCode,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=VARCHAR}, #{uptCode,jdbcType=VARCHAR}, #{lastupddate,jdbcType=VARCHAR}, 
+      #{oprstamp,jdbcType=VARCHAR}, #{deptCode,jdbcType=VARCHAR}, #{reserve1,jdbcType=VARCHAR}, 
+      #{reserve2,jdbcType=VARCHAR}, #{reserve3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.hulingfeng.domain.User">
+    insert into PUB_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="userCode != null">
+        USER_CODE,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="sexSl != null">
+        SEX_SL,
+      </if>
+      <if test="marriSl != null">
+        MARRI_SL,
+      </if>
+      <if test="eduSl != null">
+        EDU_SL,
+      </if>
+      <if test="occuSl != null">
+        OCCU_SL,
+      </if>
+      <if test="loginname != null">
+        LOGINNAME,
+      </if>
+      <if test="idcard != null">
+        IDCARD,
+      </if>
+      <if test="userstatusSl != null">
+        USERSTATUS_SL,
+      </if>
+      <if test="orgCode != null">
+        ORG_CODE,
+      </if>
+      <if test="areaCode != null">
+        AREA_CODE,
+      </if>
+      <if test="systemSl != null">
+        SYSTEM_SL,
+      </if>
+      <if test="quartersSl != null">
+        QUARTERS_SL,
+      </if>
+      <if test="userlevelSl != null">
+        USERLEVEL_SL,
+      </if>
+      <if test="alias != null">
+        ALIAS,
+      </if>
+      <if test="contactor != null">
+        CONTACTOR,
+      </if>
+      <if test="tel != null">
+        TEL,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="mobile != null">
+        MOBILE,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="avatarpath != null">
+        AVATARPATH,
+      </if>
+      <if test="qq != null">
+        QQ,
+      </if>
+      <if test="weixin != null">
+        WEIXIN,
+      </if>
+      <if test="zipcode != null">
+        ZIPCODE,
+      </if>
+      <if test="perhoucode != null">
+        PERHOUCODE,
+      </if>
+      <if test="perhouse != null">
+        PERHOUSE,
+      </if>
+      <if test="perhousehold != null">
+        PERHOUSEHOLD,
+      </if>
+      <if test="peraddcode != null">
+        PERADDCODE,
+      </if>
+      <if test="peradd != null">
+        PERADD,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="prolevelSl != null">
+        PROLEVEL_SL,
+      </if>
+      <if test="prolevelno != null">
+        PROLEVELNO,
+      </if>
+      <if test="sortno != null">
+        SORTNO,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="crtCode != null">
+        CRT_CODE,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+      <if test="uptCode != null">
+        UPT_CODE,
+      </if>
+      <if test="lastupddate != null">
+        LASTUPDDATE,
+      </if>
+      <if test="oprstamp != null">
+        OPRSTAMP,
+      </if>
+      <if test="deptCode != null">
+        DEPT_CODE,
+      </if>
+      <if test="reserve1 != null">
+        RESERVE1,
+      </if>
+      <if test="reserve2 != null">
+        RESERVE2,
+      </if>
+      <if test="reserve3 != null">
+        RESERVE3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=NUMERIC},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="sexSl != null">
+        #{sexSl,jdbcType=VARCHAR},
+      </if>
+      <if test="marriSl != null">
+        #{marriSl,jdbcType=VARCHAR},
+      </if>
+      <if test="eduSl != null">
+        #{eduSl,jdbcType=VARCHAR},
+      </if>
+      <if test="occuSl != null">
+        #{occuSl,jdbcType=VARCHAR},
+      </if>
+      <if test="loginname != null">
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="userstatusSl != null">
+        #{userstatusSl,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null">
+        #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="systemSl != null">
+        #{systemSl,jdbcType=VARCHAR},
+      </if>
+      <if test="quartersSl != null">
+        #{quartersSl,jdbcType=VARCHAR},
+      </if>
+      <if test="userlevelSl != null">
+        #{userlevelSl,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null">
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="contactor != null">
+        #{contactor,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarpath != null">
+        #{avatarpath,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="zipcode != null">
+        #{zipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="perhoucode != null">
+        #{perhoucode,jdbcType=VARCHAR},
+      </if>
+      <if test="perhouse != null">
+        #{perhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="perhousehold != null">
+        #{perhousehold,jdbcType=VARCHAR},
+      </if>
+      <if test="peraddcode != null">
+        #{peraddcode,jdbcType=VARCHAR},
+      </if>
+      <if test="peradd != null">
+        #{peradd,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="prolevelSl != null">
+        #{prolevelSl,jdbcType=VARCHAR},
+      </if>
+      <if test="prolevelno != null">
+        #{prolevelno,jdbcType=VARCHAR},
+      </if>
+      <if test="sortno != null">
+        #{sortno,jdbcType=NUMERIC},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="crtCode != null">
+        #{crtCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=VARCHAR},
+      </if>
+      <if test="uptCode != null">
+        #{uptCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lastupddate != null">
+        #{lastupddate,jdbcType=VARCHAR},
+      </if>
+      <if test="oprstamp != null">
+        #{oprstamp,jdbcType=VARCHAR},
+      </if>
+      <if test="deptCode != null">
+        #{deptCode,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve1 != null">
+        #{reserve1,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve2 != null">
+        #{reserve2,jdbcType=VARCHAR},
+      </if>
+      <if test="reserve3 != null">
+        #{reserve3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="cn.hulingfeng.domain.User">
     <id column="User_ID" jdbcType="INTEGER" property="userId" />
     <result column="User_Code" jdbcType="VARCHAR" property="userCode" />
     <result column="UserName" jdbcType="VARCHAR" property="username" />

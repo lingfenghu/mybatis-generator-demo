@@ -1,2 +1,22 @@
 server:
   port: 8000
+datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+spring:
+  resources:
+    static-locations: classpath:static/
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+  druid:
+    filters: stat,wall,slf4j
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.33.43:1521:orcl
+    username: yicdbuser
+    password: yicdbuser
+    initial-size: 10
+    max-active: 50
+    max-wait: 60000
+    min-idle: 10
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 30000
+    validation-query: SELECT 1 FROM DUAL

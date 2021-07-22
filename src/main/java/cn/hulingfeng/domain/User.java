@@ -1,8 +1,9 @@
 package cn.hulingfeng.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class User {
+public class User implements Serializable {
     private BigDecimal userId;
 
     private String userCode;
@@ -90,6 +91,8 @@ public class User {
     private String reserve2;
 
     private String reserve3;
+
+    private static final long serialVersionUID = 1L;
 
     public BigDecimal getUserId() {
         return userId;
@@ -441,5 +444,59 @@ public class User {
 
     public void setReserve3(String reserve3) {
         this.reserve3 = reserve3 == null ? null : reserve3.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", userId=").append(userId);
+        sb.append(", userCode=").append(userCode);
+        sb.append(", username=").append(username);
+        sb.append(", sexSl=").append(sexSl);
+        sb.append(", marriSl=").append(marriSl);
+        sb.append(", eduSl=").append(eduSl);
+        sb.append(", occuSl=").append(occuSl);
+        sb.append(", loginname=").append(loginname);
+        sb.append(", idcard=").append(idcard);
+        sb.append(", userstatusSl=").append(userstatusSl);
+        sb.append(", orgCode=").append(orgCode);
+        sb.append(", areaCode=").append(areaCode);
+        sb.append(", systemSl=").append(systemSl);
+        sb.append(", quartersSl=").append(quartersSl);
+        sb.append(", userlevelSl=").append(userlevelSl);
+        sb.append(", alias=").append(alias);
+        sb.append(", contactor=").append(contactor);
+        sb.append(", tel=").append(tel);
+        sb.append(", fax=").append(fax);
+        sb.append(", mobile=").append(mobile);
+        sb.append(", email=").append(email);
+        sb.append(", avatarpath=").append(avatarpath);
+        sb.append(", qq=").append(qq);
+        sb.append(", weixin=").append(weixin);
+        sb.append(", zipcode=").append(zipcode);
+        sb.append(", perhoucode=").append(perhoucode);
+        sb.append(", perhouse=").append(perhouse);
+        sb.append(", perhousehold=").append(perhousehold);
+        sb.append(", peraddcode=").append(peraddcode);
+        sb.append(", peradd=").append(peradd);
+        sb.append(", address=").append(address);
+        sb.append(", prolevelSl=").append(prolevelSl);
+        sb.append(", prolevelno=").append(prolevelno);
+        sb.append(", sortno=").append(sortno);
+        sb.append(", remark=").append(remark);
+        sb.append(", crtCode=").append(crtCode);
+        sb.append(", createdate=").append(createdate);
+        sb.append(", uptCode=").append(uptCode);
+        sb.append(", lastupddate=").append(lastupddate);
+        sb.append(", oprstamp=").append(oprstamp);
+        sb.append(", deptCode=").append(deptCode);
+        sb.append(", reserve1=").append(reserve1);
+        sb.append(", reserve2=").append(reserve2);
+        sb.append(", reserve3=").append(reserve3);
+        sb.append("]");
+        return sb.toString();
     }
 }
