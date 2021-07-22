@@ -81,6 +81,13 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -103,6 +110,16 @@
                     </configurationFile>
                     <overwrite>true</overwrite>
                     <verbose>true</verbose>
+                </configuration>
+            </plugin>
+
+            <!-- 只支持mysql 不推荐-->
+            <plugin>
+                <groupId>io.github.javthon</groupId>
+                <artifactId>mybatis-generator-yml-maven-plugin</artifactId>
+                <version>0.0.1</version>
+                <configuration>
+                    <configurationFile>src/main/resources/generatorConfig.yaml</configurationFile>
                 </configuration>
             </plugin>
         </plugins>

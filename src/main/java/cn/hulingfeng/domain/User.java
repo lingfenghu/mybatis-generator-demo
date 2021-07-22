@@ -3,93 +3,231 @@ package cn.hulingfeng.domain;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+/**
+ * 这是MyBatis Generator自动生成的Model Class.
+ * 对应的数据表是 : PUB_USER
+ * @author HLF
+ * @date 2021-07-22 14:46:43
+ */
 public class User implements Serializable {
+    /**
+     * null
+     */
     private BigDecimal userId;
 
+    /**
+     * null
+     */
     private String userCode;
 
+    /**
+     * null
+     */
     private String username;
 
+    /**
+     * null
+     */
     private String sexSl;
 
+    /**
+     * null
+     */
     private String marriSl;
 
+    /**
+     * null
+     */
     private String eduSl;
 
+    /**
+     * null
+     */
     private String occuSl;
 
+    /**
+     * null
+     */
     private String loginname;
 
+    /**
+     * null
+     */
     private String idcard;
 
+    /**
+     * null
+     */
     private String userstatusSl;
 
+    /**
+     * null
+     */
     private String orgCode;
 
+    /**
+     * null
+     */
     private String areaCode;
 
+    /**
+     * null
+     */
     private String systemSl;
 
+    /**
+     * null
+     */
     private String quartersSl;
 
+    /**
+     * null
+     */
     private String userlevelSl;
 
+    /**
+     * null
+     */
     private String alias;
 
+    /**
+     * null
+     */
     private String contactor;
 
+    /**
+     * null
+     */
     private String tel;
 
+    /**
+     * null
+     */
     private String fax;
 
+    /**
+     * null
+     */
     private String mobile;
 
+    /**
+     * null
+     */
     private String email;
 
+    /**
+     * null
+     */
     private String avatarpath;
 
+    /**
+     * null
+     */
     private String qq;
 
+    /**
+     * null
+     */
     private String weixin;
 
+    /**
+     * null
+     */
     private String zipcode;
 
+    /**
+     * null
+     */
     private String perhoucode;
 
+    /**
+     * null
+     */
     private String perhouse;
 
+    /**
+     * null
+     */
     private String perhousehold;
 
+    /**
+     * null
+     */
     private String peraddcode;
 
+    /**
+     * null
+     */
     private String peradd;
 
+    /**
+     * null
+     */
     private String address;
 
+    /**
+     * null
+     */
     private String prolevelSl;
 
+    /**
+     * null
+     */
     private String prolevelno;
 
+    /**
+     * null
+     */
     private BigDecimal sortno;
 
+    /**
+     * null
+     */
     private String remark;
 
+    /**
+     * null
+     */
     private String crtCode;
 
+    /**
+     * null
+     */
     private String createdate;
 
+    /**
+     * null
+     */
     private String uptCode;
 
+    /**
+     * null
+     */
     private String lastupddate;
 
+    /**
+     * null
+     */
     private String oprstamp;
 
+    /**
+     * null
+     */
     private String deptCode;
 
+    /**
+     * null
+     */
     private String reserve1;
 
+    /**
+     * null
+     */
     private String reserve2;
 
+    /**
+     * null
+     */
     private String reserve3;
 
     private static final long serialVersionUID = 1L;
